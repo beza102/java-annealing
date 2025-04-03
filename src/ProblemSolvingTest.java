@@ -146,11 +146,70 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
+  @Test
+  void testMaxLength_singleWord(){
+    //arrange
+    Set<String> input = Set.of("Hello");
+    //act
+    int actual = ProblemSolving.maxLength(input);
+    //assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+    Void testMaxLength_sameLength(){
+      //arrange
+      Set<String> input =Set.of("car", "dog", "pig");
+      //act
+      int actual = ProblemSolving.maxLength(input);
+      //assert
+      assertEquals(3, actual);
+
+    }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+  @Test
+  void testMinLength_singleWord(){
+    //arrange
+    Set<String> input = Set.of("Music");
+    //act
+    int actual = ProblemSolving.maxLength(input);
+    //assert
+    assertEquals(5, actual);
+  
+  }
 
+  @Test
+  void testMinLength_moreWords(){
+    //arrange
+    Set<String> input = Set.of("cry", "dance", "sing");
+    //act
+    int actual = ProblemSolving.minLength(input);
+    //assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMinLength_sameLength(){
+     //arrange
+     Set<String> input =Set.of("car", "dog", "pig");
+     //act
+     int actual = ProblemSolving.minLength(input);
+     //assert
+     assertEquals(3, actual);
+
+  }
+
+  @Test
+  void testMinLength_emptySet(){
+    //arrange
+    Set<String> input =Set.of();
+    //act
+    int actual = ProblemSolving.minLength(input);
+    //assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
 }
