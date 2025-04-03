@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.beans.Transient;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -31,8 +32,37 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
   //  - test an empty set
+  @Test
+  void testAllStartWithA_emptySet(){
+    //arrange
+    Set<String> input = Set.of();
+    //act
+    boolean actual =  ProblemSolving.allStartWithA(input);
+    //assert
+    assertTrue(actual);
+  }
   //  - test a set where none start with A
+  @Test
+  void testAllStartWithA_nonStartWithA(){
+    //arrange
+    Set<String> input = Set.of("dog", "cat","lion");
+    //act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    //assert
+    assertFalse(actual);
+  }
   //  - test a set with only a single element
+  @Test
+  void testAllStartWithA_singleElement(){
+    //arrange
+    Set<String> input = Set.of("anger");
+    //act
+    boolean actual =ProblemSolving.allStartWithA(input);
+    //assert
+    assertTrue(actual);
+  
+  }
+
   //  - more you can think of!
 
   @Test
@@ -59,6 +89,7 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+  
 
 
   @Test
